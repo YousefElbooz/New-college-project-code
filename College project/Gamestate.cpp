@@ -445,11 +445,12 @@ void Gamestate::render(sf::RenderTarget* target)
 
 void Gamestate::snakedirection()
 {
-    //-->>//snacke direction
-    if (dir == UP) s[0].y += 1;
-    if (dir == DOWN) s[0].y -= 1;
-    if (dir == LEFT) s[0].x += 1;
-    if (dir == RIGHT) s[0].x -= 1;
+
+        //-->>//snacke direction
+        if (dir == UP) s[0].y += 1;
+        if (dir == DOWN) s[0].y -= 1;
+        if (dir == LEFT) s[0].x += 1;
+        if (dir == RIGHT) s[0].x -= 1;
 
 }
 
@@ -521,7 +522,7 @@ void Gamestate::Snackedie()
 {
     //-->>//snacke bite it self
     for (int i = num; i > 0; i--)
-        if (s[0].x == s[i].x && s[0].y == s[i].y) {
+        if (s[0].x == s[i].x && s[0].y == s[i].y&& s[0].x != s[1].x && s[0].y != s[1].y) {
             num = 3, score = 0, scoretext.setString("score :" + std::to_string(score)), highscoretext.setString("Highscore :" + std::to_string(highscore));
             if (this->getkeytime()) {
             } is_die = true;
